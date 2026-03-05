@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ─────────────────────────────── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #3ECF8E #0a0f1e;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #060a14;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    line-height: 1.7;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0f1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3ECF8E;
+    border-radius: 3px;
+}
+
+/* ── Glass Morphism ───────────────────── */
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+}
+
+.glass-strong {
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+
+/* ── Glow Effects ─────────────────────── */
+.glow-accent {
+    box-shadow: 0 0 40px rgba(62, 207, 142, 0.15),
+        0 0 80px rgba(62, 207, 142, 0.05);
+}
+
+.text-glow {
+    text-shadow: 0 0 40px rgba(62, 207, 142, 0.3);
+}
+
+/* ── Aurora Background ────────────────── */
+.aurora-bg {
+    background: linear-gradient(135deg,
+            rgba(62, 207, 142, 0.08) 0%,
+            rgba(6, 10, 20, 0) 30%,
+            rgba(59, 130, 246, 0.05) 60%,
+            rgba(6, 10, 20, 0) 100%);
+    background-size: 300% 300%;
+    animation: aurora 8s ease-in-out infinite;
+}
+
+@keyframes aurora {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ── Meshgradient on projects ─────────── */
+.mesh-gradient {
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(62, 207, 142, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(139, 92, 246, 0.04) 0%, transparent 50%);
+}
+
+/* ── Timeline ─────────────────────────── */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #3ECF8E, rgba(62, 207, 142, 0.1));
+    transform: translateX(-50%);
+    transform-origin: top;
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 20px;
+    }
+}
+
+/* ── Custom selection ─────────────────── */
+::selection {
+    background: rgba(62, 207, 142, 0.3);
+    color: #fff;
+}
+
+/* ── Section separator ────────────────── */
+.section-separator {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(62, 207, 142, 0.2), transparent);
+    margin: 0 auto;
+    max-width: 600px;
+}
